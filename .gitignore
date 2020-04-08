@@ -44,3 +44,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# We choose to use only npm to prevent conflicts
+yarn.lock

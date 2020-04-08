@@ -1,0 +1,28 @@
+version: 0.1
+
+env:
+  parameter-store:
+    envir: "environmentVariableToFillInCodeBuild"
+
+phases:
+  install:
+    commands:
+      - rm ./package-lock.json
+      - rm -rf node_modules
+      - npm install
+  pre_build:
+    commands:
+      - npm run lint
+      - npm run test-ci
+      - npm run e2e-ci
+  build:
+    commands:
+      - npm run build:$envir
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'dist*'
+  discard-paths: no
+cache:
+  paths:
+    - node_modules/
