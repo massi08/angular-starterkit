@@ -9,3 +9,11 @@ This project is an angular 9 starter kit with:
 - Hot reloading & live relaoding :fire:
 - Browser language detection and translations 
 
+You can use all commands in the scripts section in ``package.json`` file.
+
+For eg:
+
+``$ yarn start:hmr`` to start the app with hot reloading.
+
+To start your own project from this one, clone this one and replace all occurrences of 'angular-starterkit' 
+by your project's name
