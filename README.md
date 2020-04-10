@@ -7,7 +7,8 @@ This project is an angular 10 starter kit with:
 - Multiple environments setup (prod, preprod, stage, prestage, local) 
 - A buildspec.yml for AWS CI/CD via Code Pipeline 
 - Hot reloading & live relaoding :fire:
-- Browser language detection and translations 
+- Browser language detection and translations
+- NGXS Store configured to work in hmr
 
 You can use all commands in the scripts section in ``package.json`` file.
 

@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {DEFAULT_LANG, LANG_ARRAY} from '../app.constants';
+import {Store} from '@ngxs/store';
+import {SetLang} from '../actions/general.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class LanguageService {
 
   currentLang: string;
 
-  constructor(private translateService: TranslateService) {
+  constructor(private translateService: TranslateService, private store: Store) {
   }
 
   init() {
@@ -66,5 +68,6 @@ export class LanguageService {
     }
     this.currentLang = lang;
     this.translateService.use(lang);
+    this.store.dispatch(new SetLang(lang));
   }
 }

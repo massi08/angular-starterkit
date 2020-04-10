@@ -1,14 +1,17 @@
 import {LanguageService} from './language.service';
 import {TranslateService} from '@ngx-translate/core';
+import {Store} from '@ngxs/store';
 
 describe('languageService', () => {
   let service: LanguageService;
   let translateServiceSpy: jasmine.SpyObj<TranslateService>;
+  let storeSpy: jasmine.SpyObj<Store>;
 
   beforeEach(() => {
     translateServiceSpy = jasmine.createSpyObj('TranslateService',
       ['addLangs', 'setDefaultLang', 'getBrowserLang', 'use']);
-    service = new LanguageService(translateServiceSpy);
+    storeSpy = jasmine.createSpyObj('Store', ['dispatch']);
+    service = new LanguageService(translateServiceSpy, storeSpy);
   });
 
   it('#isLangSupported should always return true or false', () => {
