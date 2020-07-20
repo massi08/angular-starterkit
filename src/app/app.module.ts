@@ -22,7 +22,9 @@ import {GeneralState} from './reducers/general/general.state';
     NgxsModule.forRoot([GeneralState], {
       developmentMode: !environment?.production
     }),
-    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsReduxDevtoolsPluginModule.forRoot(
+      {disabled: environment.production}
+    ),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
