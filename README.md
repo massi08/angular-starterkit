@@ -1,6 +1,6 @@
 # angular-starterkit
 
-This project is an angular 9 starter kit with:
+This project is an angular 10 starter kit with:
 
 - A project architecture that follows good practices
 - E2E and Unit tests configured
